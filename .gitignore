@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build / cache
+dist/
+build/
+.cache/
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Optional: IDE files
+.vscode/
+.idea/
+
+# npm & yarn
+package-lock.json
+yarn.lock
