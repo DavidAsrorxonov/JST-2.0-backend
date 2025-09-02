@@ -218,7 +218,10 @@ router.post("/password-check", tokenChecker, async (req, res) => {
     } else {
       return res.status(400).json({ message: "Password does not match" });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error checking password" });
+  }
 });
 
 router.put("/password-update", tokenChecker, async (req, res) => {
