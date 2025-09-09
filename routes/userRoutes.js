@@ -15,10 +15,6 @@ router.delete("/users", tokenChecker, async (req, res) => {
   const userId = req.user.id;
   const { email, password } = req.body;
 
-  console.log("USER ID", userId);
-  console.log("EMAIL", email);
-  console.log("PASSWORD", password);
-
   if (!failedAttempts.has(userId)) {
     failedAttempts.set(userId, 0);
   }
@@ -32,8 +28,6 @@ router.delete("/users", tokenChecker, async (req, res) => {
       `SELECT email, user_password FROM users WHERE id = $1`,
       [userId]
     );
-
-    console.log("USER RESULT", userResult);
 
     if (userResult.rowCount === 0) {
       const count = failedAttempts.get(userId) + 1;

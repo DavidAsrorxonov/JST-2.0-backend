@@ -95,9 +95,6 @@ router.post("/verify-otp", (req, res) => {
   const realOTP = storedOtp.otp;
   otpValue.toString();
 
-  console.log("Stored OTP:", storedOtp);
-  console.log("Received OTP:", otpValue);
-
   if (realOTP === otpValue) {
     otpStore.delete(email);
     return res.status(200).json({ message: "OTP verified successfully" });

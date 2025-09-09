@@ -1,5 +1,4 @@
 import express from "express";
-import pool from "./db.js";
 import authRoutes from "./routes/authRoutes.js";
 import photoUpload from "./routes/photoUpload.js";
 import jobRoutes from "./routes/jobRoutes.js";
@@ -8,7 +7,6 @@ import todoRoutes from "./routes/todoRoutes.js";
 import archivedToDoRoutes from "./routes/archivedToDoRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import cors from "cors";
-import { tokenChecker } from "./middleware/tokenChecker.js";
 
 const app = express();
 const PORT = 3000;
